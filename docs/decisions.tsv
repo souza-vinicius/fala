@@ -1,0 +1,36 @@
+ts	phase	decision	why	evidence	result
+2026-10-31T11:46:00Z	frame	Documentos de produto apenas, sem projeto de app	O repositório estava vazio. Um shell de app fixaria a stack antes do limite de 30 segundos e do desenho no notch	README.md	escopo fechado em glossário, PRD, diretrizes, dois ADRs e o script
+2026-10-31T11:46:00Z	glossary	Recorte, bandeja e tomada ficam distintos da área de transferência	O pedido mistura ditado e clipboard. Sem nomes separados a interface mistura os dois	GLOSSARY.md	termos travados
+2026-10-31T11:46:00Z	adr	Gemma 4 no aparelho é o único caminho da fala	O diferencial pedido é local. A documentação da Google limita cada áudio a 30 segundos	docs/adr/0001-gemma-no-aparelho.md	aceito, ditado longo segue em aberto
+2026-10-31T11:46:00Z	adr	A bandeja guarda o recorte e a área de transferência só transporta	A pessoa precisa colar de novo sem perder o que já tinha copiado	docs/adr/0002-bandeja-e-area-de-transferencia.md	aceito, prazo e teto ficam no PRD
+2026-10-31T11:46:00Z	prd	A primeira versão é uma tomada de até 30 segundos mais a bandeja	Dois gestos inteiros, em vez de tom por app, equipe e atalho de voz	docs/prd.md	escrito
+2026-10-31T11:46:00Z	diretrizes	Conflito sem requisito cai nas diretrizes	Conta, sync e arquivo permanente não entram pela lateral	docs/diretrizes.md	escrito
+2026-10-31T11:50:16Z	prd	A primeira versão para a tomada aos 30 segundos em vez de juntar trechos	O limite de 30 segundos está na documentação do Gemma e a junção ainda não foi medida	docs/prd.md	aberto para uma versão seguinte
+2026-10-31T11:50:16Z	prd	A cola no campo ativo entra junto com a bandeja	O pedido pede o gesto do Wispr Flow e também o recorte temporário	docs/prd.md	aceito como premissa de confiança alta
+2026-10-31T11:50:16Z	prd	O PRD fica em docs/prd.md	Não há base Tempo neste repositório e o pedido foi por arquivos do projeto	docs/prd.md	arquivo no disco
+2026-10-31T11:50:16Z	check	scripts/check-foundation.sh terminou com código 0	A prova é o comando sobre os arquivos, não o relato de quem escreveu	scripts/check-foundation.sh	foundation ok
+2026-10-31T11:54:25Z	check	O script só confere arquivos, termos e seções	A linha anterior de código 0 provava a forma, não uma tomada	scripts/check-foundation.sh	substitui a leitura de foundation ok como prova do produto
+2026-10-31T11:54:25Z	audit	As seis linhas das 11:46:00Z foram carimbadas juntas	Os arquivos saíram num lote. O relógio não é um evento por decisão	docs/decisions.tsv	decisões mantidas, horários em lote
+2026-10-31T11:54:25Z	audit	O jsonl na pasta de transcrições é de outra sessão	O único arquivo é o setup do pstack, não esta base de produto	agent-transcripts/e5ef52c0-215c-4c0d-9d2c-4717bf9ccc7c	INCONCLUSIVE
+2026-10-31T11:54:25Z	prd	Cola direta, disco local, e campo de senha quieto	Bandeja de um dia com senha, ou cópia vista por outro gerenciador, fura o áudio local	docs/prd.md	escrito depois da revisão
+2026-10-31T11:54:25Z	adr	Runtime nativo, acerto em português e Mac App Store seguem em aberto	O guia do Gemma mostra Python. A regra atual da loja não foi lida	docs/adr/0001-gemma-no-aparelho.md	aberto
+2026-10-31T11:54:25Z	check	O script deixou de travar 24 horas e 30 recortes	Esses números têm confiança média. Travá-los no script contraria o PRD	scripts/check-foundation.sh	números só no PRD
+2026-10-31T12:29:04Z	start	Revisão da base pedida pela pessoa	Segunda volta sobre os mesmos arquivos, nesta conversa	agente 4ecb7970 com revisor 86ee2bec	linhas anteriores são da primeira volta desta conversa
+2026-10-31T12:29:04Z	prd	Tomada guardada não mexe na área de transferência	Não há instante para devolver a cópia depois de um Cmd+V manual	docs/prd.md, docs/adr/0002-bandeja-e-area-de-transferencia.md	substitui o texto deixado na área sem campo
+2026-10-31T12:29:04Z	prd	O notch cola e a janela do Dock copia e apaga	Clicar no Dock ativa o Fala e tira o foco do campo	docs/prd.md	escrito
+2026-10-31T12:29:04Z	prd	O destino é o campo ativo no começo da tomada	Texto no campo errado é pior que texto nenhum	docs/prd.md, docs/diretrizes.md	foco mudou leva a guardada
+2026-10-31T12:29:04Z	glossary	Novo fim da tomada, Descartada, e Guardada passa a ser estado da tomada	Cancelamento, áudio vazio e falha do modelo não tinham fim. Guardado era do recorte num arquivo e da tomada no outro	GLOSSARY.md, AGENTS.md	estados alinhados
+2026-10-31T12:29:04Z	prd	Áudio só na memória, sem telemetria e sem busca de atualização	A promessa de privacidade era mais larga que os requisitos	docs/prd.md	escrito
+2026-10-31T12:29:04Z	prd	Requisito da área de transferência descreve o resultado e não o mecanismo	A sandbox da loja bloqueia a acessibilidade e aceita postar eventos. O mecanismo é da engenharia	https://developer.apple.com/forums/thread/789896	loja passa de barrada para não testada
+2026-10-31T12:29:04Z	adr	Escrita direta só conta com confirmação, senão só o empréstimo	Sem leitura de volta, um build empresta sempre e outro nunca, ou escreve duas vezes	docs/adr/0002-bandeja-e-area-de-transferencia.md	aceito
+2026-10-31T12:29:04Z	prd	fn + Espaço sai dos requisitos	Conflita com o padrão do Wispr Flow e tende a exigir monitoramento de entrada	docs/prd.md	atalho padrão em aberto
+2026-10-31T12:29:04Z	prd	24 horas contam do nascimento do recorte e colar não muda a ordem	O prazo não tinha instante de início	docs/prd.md	testável
+2026-10-31T12:29:04Z	prd	Texto sem marcas de controle do modelo e sem corte	O exemplo da Google termina em <turn| e usa 64 tokens	https://ai.google.dev/gemma/docs/capabilities/audio	requisito novo
+2026-10-31T12:29:04Z	adr	Gemma 4 é Apache 2.0, e o download não deve pedir conta	Pesa na promessa de não ter conta	docs/adr/0001-gemma-no-aparelho.md	o portão do repositório é fonte secundária, o build confirma
+2026-10-31T12:29:04Z	prd	O notch continua requisito, com a barra de menus como substituta	O revisor sugeriu só a barra de menus. O notch foi pedido pela pessoa	docs/prd.md	sugestão recusada
+2026-10-31T12:29:04Z	prd	O aviso no atalho em campo de senha continua	O revisor sugeriu silêncio. Um atalho sem resposta parece quebrado	docs/prd.md	sugestão recusada
+2026-10-31T12:36:58Z	prd	Código aberto e instalação fora da Mac App Store	Pedido da pessoa. A cola pode usar a API de acessibilidade	docs/adr/0003-codigo-aberto-fora-da-loja.md	aceito
+2026-10-31T12:36:58Z	adr	Licença do código fica Apache 2.0 até outra ser nomeada	É a mesma do Gemma 4. A pessoa não escolheu outra	docs/adr/0003-codigo-aberto-fora-da-loja.md	padrão aplicado, reversível
+2026-10-31T12:36:58Z	prd	Option direita é o atalho padrão, com toque e segura na mesma tecla	Pedido da pessoa. Os dois gestos sem seletor de modo	docs/adr/0004-option-direita-toque-e-segura.md	aceito
+2026-10-31T12:36:58Z	prd	O controle do notch só faz toque	Não há como segurar o controle no alto da tela	docs/prd.md	escrito
+2026-10-31T12:36:58Z	prd	Monitoramento de entrada passa a ser permissão do atalho padrão	Distinguir Option direita da esquerda pede isso. Inferência, sem teste neste repositório	docs/adr/0004-option-direita-toque-e-segura.md	requisito
