@@ -34,3 +34,5 @@ ts	phase	decision	why	evidence	result
 2026-10-31T12:36:58Z	prd	Option direita é o atalho padrão, com toque e segura na mesma tecla	Pedido da pessoa. Os dois gestos sem seletor de modo	docs/adr/0004-option-direita-toque-e-segura.md	aceito
 2026-10-31T12:36:58Z	prd	O controle do notch só faz toque	Não há como segurar o controle no alto da tela	docs/prd.md	escrito
 2026-10-31T12:36:58Z	prd	Monitoramento de entrada passa a ser permissão do atalho padrão	Distinguir Option direita da esquerda pede isso. Inferência, sem teste neste repositório	docs/adr/0004-option-direita-toque-e-segura.md	requisito
+2026-10-31T12:51:11Z	memoria	Sete memórias no Mem0 com user_id fala: quatro decisões, uma armadilha, dois fatos de ambiente	Uma sessão nova precisa delas sem reler a conversa. Números do PRD ficaram fora para não haver duas fontes	mem0 get_memories user_id=fala, count 7	gravado
+2026-10-31T12:51:11Z	memoria	AGENTS.md manda buscar no Mem0 ao começar e gravar ao terminar	Pedido do dono para o fluxo ser automático. O script confere que a seção existe	AGENTS.md, scripts/check-foundation.sh	escrito

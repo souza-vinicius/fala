@@ -73,6 +73,11 @@ for token in Take Clip Tray listening writing delivered held discarded; do
   grep -q "\`${token}\`" AGENTS.md || fail "AGENTS.md missing ${token}"
 done
 
+grep -q '`user_id: "fala"`' AGENTS.md || fail "AGENTS.md missing Mem0 scope"
+for kind in decisao armadilha ambiente; do
+  grep -q "\`\[${kind}\]\`" AGENTS.md || fail "AGENTS.md missing Mem0 kind ${kind}"
+done
+
 header=$(head -n 1 docs/decisions.tsv)
 [[ $header == $'ts\tphase\tdecision\twhy\tevidence\tresult' ]] || fail "decision log header"
 
