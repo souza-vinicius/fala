@@ -100,4 +100,14 @@ if bad:
     sys.exit(1)
 PY
 
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git rev-parse --verify HEAD >/dev/null 2>&1; then
+  expected='Vinicius Pereira de Souza <vinnyx14@gmail.com>'
+  while IFS= read -r identity; do
+    [[ $identity == "$expected" ]] || fail "commit author must be ${expected}"
+  done < <(git log --format='%an <%ae>')
+  while IFS= read -r identity; do
+    [[ $identity == "$expected" ]] || fail "commit committer must be ${expected}"
+  done < <(git log --format='%cn <%ce>')
+fi
+
 echo "foundation ok. files, terms, and headings are in place. a take is not proven."

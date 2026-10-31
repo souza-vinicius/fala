@@ -48,6 +48,10 @@ O Mem0 fica fora da máquina. Ele nunca recebe texto ditado, recorte, áudio, se
 
 Se o Mem0 não responder, siga a tarefa e diga no relatório final o que não foi gravado.
 
+## Autor dos commits
+
+Os commits deste repositório usam o autor Vinicius Pereira de Souza e o e-mail vinnyx14@gmail.com. Passe esses valores no próprio comando de commit. Não altere o git config.
+
 ## Pronto quando
 
 `scripts/check-foundation.sh` termina com código 0 e a última linha diz o que foi conferido. O requisito ou o termo novo está no arquivo que a ordem de leitura indica. A decisão, a armadilha ou o fato de ambiente novo está no Mem0. Uma tomada funcionando é outra prova, e ela espera um build.
